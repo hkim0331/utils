@@ -23,7 +23,8 @@
     (->> arg
          c2adoc
          (shell/sh "asciidoctor")))
-  ;; cleanup
+
+  ;; cleanup temporally files
   (doseq [arg *command-line-args*]
     (shell/sh "rm" (str (basename arg) ".adoc"))))
 

@@ -1,4 +1,11 @@
 #!/bin/sh
+#
+# bump-vesion script for clojure projects.
+# confused using macos's /usr/bin/sed.
+# so gsed.
+#
+# FIXME: `c` is better than `s`?
+
 if [ -z "$1" ]; then
     echo "usage: $0 <version>"
     exit
@@ -13,8 +20,10 @@ fi
 ${SED} -E -i "s/^\(defproject (.+) .+/(defproject \1 \"$1\"/" project.clj
 
 # clj
-${SED} -E -i "s/^\(def \^:private version .+/(def ^:private version \"$1\")/" src/core.clj
+#${SED} -E -i "s/^\(def \^:private version .+/(def ^:private version \"$1\")/" \
+#       src/core.clj
 
 # cljs
-${SED} -E -i "s/^\(def \^:private version .+/(def ^:private version \"$1\")/" src/main.cljs
+#${SED} -E -i "s/^\(def \^:private version .+/(def ^:private version \"$1\")/" \
+#       src/main.cljs
 
