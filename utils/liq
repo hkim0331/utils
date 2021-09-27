@@ -1,0 +1,2 @@
+#!/bin/sh
+clojure -Sdeps '{:deps {mogenslund/liquid {:mvn/version "2.0.8"}}}' -m liq.core

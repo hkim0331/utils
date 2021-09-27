@@ -1,0 +1,14 @@
+#!/bin/sh
+# -p 5555 or --port=5555?
+#
+# 2019-12-23 :port,${PORT} をコンマを剥ぎ取って :port ${PORT} としたら動かない。
+# 引数を処理するのは Clojure じゃないのかな？
+
+if [ -z $1 ]; then
+    PORT=5555
+else
+    PORT=$1
+fi
+
+echo $PORT
+JVM_OPTS="-Dclojure.server.myrepl={:port,${PORT},:accept,clojure.core.server/repl}" lein repl

@@ -1,0 +1,72 @@
+#!/bin/bash
+#
+# origin: ${dotfiles}/utils/nuc.templ
+#
+# note: before use, rename this as 'nuc' or 'nuc7'.
+
+if [ `basename $0` == "nuc" ]; then
+    NUC='nuc.local'
+    MAC='b8:ae:ed:7b:64:46'
+    OFF='systemctl hibernate'
+else
+    NUC='nuc7.local'
+    MAC='94:c6:91:1a:27:c1'
+    OFF='pm-suspend'
+fi
+
+usage () {
+    echo $0 '[on|off|list|running] [start|stop guest]'
+}
+
+on () {
+    wakeon ${MAC} ${NUC}
+}
+
+off () {
+    # ssh ${NUC} sudo ${OFF}
+    # 2020-05-16
+    # 2021-03-15, add -S and surround the command line by ''.
+    ssh ${NUC} 'sudo -S systemctl suspend'
+}
+
+## following lines are common to both nuc and nuc7.
+
+[ $# -eq 0 ] && usage $0 && exit 1;
+
+case "$1" in
+    on)
+        on
+        ;;
+
+    off)
+        off
+        ;;
+
+    bash)
+        ssh ${NUC} lxc exec $2 -- bash
+        ;;
+
+    list|ls)
+        ssh ${NUC} lxc list --columns ns4S
+        ;;
+
+    running)
+        ssh ${NUC} bin/lxc-running
+        ;;
+
+    start)
+        ssh ${NUC} lxc start "$2"
+        ;;
+
+    stop)
+        ssh ${NUC} lxc stop "$2"
+        ;;
+
+    ssh)
+        ssh ubuntu@$2.local
+        ;;
+    *)
+        usage
+        ;;
+esac
+

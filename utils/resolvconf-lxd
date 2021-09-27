@@ -1,0 +1,2 @@
+#!/bin/sh
+echo 'nameserver 10.53.95.1' | sudo resolvconf -a lo.dnsmasq

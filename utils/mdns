@@ -1,0 +1,13 @@
+#!/bin/sh
+# multicast dns resolver using dig.
+#
+# origin: ${utils}/mdns
+#
+# usage:
+#  mdns syno2.local
+#  mdns syno2.local tmac2.local
+#  mdns +short syno2.local
+#  mdns -x 10.0.34.1
+
+dig @224.0.0.251 -p 5353 $@
+

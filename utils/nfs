@@ -1,0 +1,32 @@
+#!/bin/sh
+# origin: ${utils}/start-stop-scripts/nfs
+#/sbin/mount_nfs -o vers=4 ds218j.local:/volume1/NFS /Volumes/nfs
+#
+# FIXME: umount removes mount point. why?
+
+usage() {
+    echo "usage: $0 [mount|umount|unmount|status]"
+    exit 0
+}
+
+[ $# -ne 1 ] && usage
+
+case "$1" in
+    mount)
+        if [ ! -d /Volumes/nfs ]; then
+            sudo mkdir /Volumes/nfs
+        fi
+        sudo /sbin/mount_nfs syno2.local:/volume1/nfs /Volumes/nfs
+        ;;
+    u*mount)
+        echo under construction
+        ;;
+    status)
+        echo under construction
+        ;;
+    *)
+        usage
+        ;;
+esac
+
+

@@ -1,0 +1,45 @@
+#!/bin/sh
+# origin: ${dotfiles}/utils/my-postgres
+#
+# update: 2020-12-28
+#
+
+usage() {
+    echo "usage: $0 [start|stop|status|pfw|pfw-stop|docker]"
+    exit 0
+}
+
+[ -z $1 ] && usage
+
+case "$1" in
+    start)
+        if [ `pidof postgres` ]; then
+            echo postresql is running
+        else
+            brew services start postgresql
+        fi
+        ;;
+    stop)
+        brew services stop postgresql
+        ;;
+    pfw-stop)
+        kill `lsof -i:5432 -t`
+        ;;
+    pfw)
+        ssh -fN -L 5432:localhost:5432 $2
+        ;;
+    docker)
+        # docker run --name pg -p 5432:5432 -e POSTGRES_DB=db -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -d postgres:11.5
+        #
+        # kill では殺せない。
+        docker start pg
+        ;;
+    status)
+        #ps axc | grep postgres
+        #ps ax | grep '[s]sh -fN -L 5432'
+        lsof -i:5432
+        ;;
+    *)
+        usage
+        ;;
+esac

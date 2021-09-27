@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+# 2017-11-25
+# $resilio/utils/select-emacs.rb
+
+# must chage in accordance with the platform.
+selects = %w{
+        workspace/dotfiles/emacs.d
+        github/prelude
+        github/spacemacs}
+
+selects.each do |dir|
+  unless Dir.exists?(File.join(ENV['HOME'], dir))
+    raise "#{dir} does not exit"
+  end
+end
+
+selects.each_with_index do |s, i|
+  puts "#{i} #{s}"
+end
+print "which will you use? ==> "
+emacs = selects[gets.to_i]
+cmd = "cd $HOME && rm -f .emacs.d && ln -sf #{emacs} .emacs.d"
+system cmd

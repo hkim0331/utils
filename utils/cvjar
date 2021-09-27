@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# reside in ~/utils/cvjar/cvjar.sh
+
+if [ ! -f ./libopencv_java331.dylib ]; then
+    unzip -j $1 '*.dylib' 2>/dev/null
+fi
+java -Djava.library.path=./ -jar $1

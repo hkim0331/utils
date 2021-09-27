@@ -1,0 +1,51 @@
+#!/usr/bin/ruby
+# coding: utf-8
+#
+# SYNOPSIS:
+#   fail2ban の有効なジャイルの全状況をリストする。
+#
+# FIXME:
+#  中間ファイルではなく、プロセスからパイプで取り出そうとするとエラー。
+#
+#  [Errno 32] Broken pipe
+# Traceback (most recent call last):
+#   File "/usr/bin/fail2ban-client", line 37, in <module>
+#     exec_command_line(sys.argv)
+#   File "/usr/lib/python3/dist-packages/fail2ban/client/fail2banclient.py", line 503, in exec_command_line
+#     exit(-1)
+#   File "/usr/lib/python3/dist-packages/fail2ban/client/fail2bancmdline.py", line 318, in exit
+#     sys.stdout.flush()
+# BrokenPipeError: [Errno 32] Broken pipe
+# Exception ignored in: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='UTF-8'>
+# BrokenPipeError: [Errno 32] Broken pipe
+#
+# programmed by hkimura, 2019-10-02.
+
+# FIXME: does not work.
+def jails_pipe()
+  jais = ""
+  IO.popen("/usr/bin/fail2ban-client status") do |line|
+    if line =~ /Jail list:(.*)$/
+      jails = $1.strip.split(/, /)
+    end
+  end
+  jails
+end
+
+def jails_tmp()
+  tmp = "/tmp/status.txt"
+  system "/usr/bin/fail2ban-client status > #{tmp}"
+  jails = nil
+  File.foreach(tmp) do |line|
+    if line =~ /Jail list:(.*)$/
+      jails = $1.strip.split(/, /)
+    end
+  end
+  File.unlink(tmp)
+  jails
+end
+
+jails_tmp().each do |j|
+  system "/usr/bin/fail2ban-client status #{j}"
+  puts
+end

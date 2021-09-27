@@ -1,0 +1,39 @@
+#!/bin/sh
+
+usage() {
+    echo "usage: $0 [start|stop|status|pfw|pfw-stop|docker]"
+    exit 0
+}
+
+[ -z $1 ] && usage
+
+case "$1" in
+    start)
+        if [ `pidof redis-server` ]; then
+            echo redis-server is running
+        else
+            #redis-server $HOMEBREW_PREFIX/etc/redis.conf &
+            brew services start redis
+        fi
+        ;;
+    stop)
+        #redis-cli shutdown
+        brew services stop redis
+        ;;
+    pfw-stop)
+        kill `ps ax | grep '[s]sh -fN -L 6379' | awk '{print $1}'`
+        ;;
+    pfw)
+        ssh -fN -L 6379:localhost:6379 $2
+        ;;
+    docker)
+        docker run -d --name redis-docker -p 6369:6379 -d redis
+        ;;
+    status)
+        ps axc | grep redis-server
+        ps ax | grep '[s]sh -fN -L 6379'
+        ;;
+    *)
+        usage
+        ;;
+esac

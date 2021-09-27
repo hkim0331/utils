@@ -1,0 +1,6 @@
+#!/bin/sh
+# 現在ディレクトリの xyz.clj を xyz でシンボリックリンク。
+
+for i in *.clj; do
+    ln -s $i `basename $i .clj`
+done

@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# obsoleted by wol.clj
+#
+# * update - 2021-02-10
+#   copied from tmac2:~/bin/wakeonlan
+
+if [ ! $# = 2 ]; then
+    echo "usage: $0 <mac> <ip>"
+    exit 1
+fi
+
+MAC=$1
+HOST=$2
+
+ping -c 2  ${HOST} >/dev/null
+if [ $? = "0" ]; then
+    echo "wake on"
+    exit 0
+fi
+
+wakeonlan ${MAC}
+
+while :
+do
+    ping -c 2 ${HOST} >/dev/null 2>&1
+    if [ $? = "0" ]; then
+        break
+    else
+        /bin/echo -n '.'
+    fi
+done
+
+echo 'wakeup'
+
+exit 0

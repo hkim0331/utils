@@ -1,0 +1,2 @@
+#!/bin/sh
+ls -tr $1 | tail -1

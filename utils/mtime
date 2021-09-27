@@ -1,0 +1,2 @@
+#!/bin/sh
+find . -mtime $1 | awk -F '/' '{print $2}' | uniq

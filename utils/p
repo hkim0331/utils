@@ -1,0 +1,18 @@
+#!/bin/sh
+# asciidoctor previewer
+#
+# create: 2021-03-27
+#
+# usage: p <file.adoc>
+#
+# fixme: must execute on *.adoc only.
+#        when wants standalone html,
+#        use -a data-uri -a allow-uri-read
+
+if [ -z "$1" ]; then
+  echo 'usage: p <file.adoc>'
+  exit 1
+fi
+
+asciidoctor $1 && open `basename $1 .adoc`.html
+

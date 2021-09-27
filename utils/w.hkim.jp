@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# origin: dotfiles/utils/w.hkim.jp
+#
+# 2021-09-27 API changed. gsed is no longer required.
+#
+# update:
+# * 2020-11-19 use gsed if found
+
+URL=https://w.hkim.jp
+if [ -z "$1" ]; then
+  http --body ${URL}/loc
+else
+  http --body ${URL}/ loc="$*"
+fi

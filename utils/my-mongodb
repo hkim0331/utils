@@ -1,0 +1,42 @@
+#!/bin/sh
+# should not launche more than one mongod
+
+usage() {
+    echo "usage: $0 [start6|start|stop|status|pfw|pfw-stop]"
+    exit 0
+}
+
+[ -z $1 ] && usage
+
+case "$1" in
+    start6)
+        if [ `pidof mongod` ]; then
+            echo mongodb is running
+        else
+            mongod --config $HOMEBREW_PREFIX/etc/mongod6.conf &
+        fi
+        ;;
+    start)
+        if [ `pidof mongod` ]; then
+            echo mongodb is running
+        else
+            mongod --config $HOMEBREW_PREFIX/etc/mongod.conf &
+        fi
+        ;;
+    stop)
+        kill `pidof mongod`
+        ;;
+    pfw-stop)
+        kill `ps ax | grep '[s]sh -fN -L 27017' | awk '{print $1}'`
+        ;;
+    pfw)
+        ssh -fN -L 27017:localhost:27017 $2
+        ;;
+    status)
+        ps ax | grep '[m]ongod '
+        ps ax | grep '[s]sh -fN -L 27017'
+        ;;
+    *)
+        usage
+        ;;
+esac

@@ -1,0 +1,11 @@
+#!/bin/sh
+# origin: ${utils}/sleeper.sh
+# nuc-off is an alias. so, can not use here.
+
+ping -c 2 -t 2 nuc.local
+if [  $? -eq 0 ]; then
+    # never returns
+    ssh nuc.local 'sudo systemctl hibernate' &
+fi
+sleep 2
+osascript -e "tell application \"Finder\" to sleep"

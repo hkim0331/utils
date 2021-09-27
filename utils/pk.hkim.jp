@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# origin: ${utils}/pk.hkim.jp
+#
+if [ -z $1 ]; then
+  exec $0 keys
+fi
+
+#host=http://duct:8009
+host=https://pk.hkim.jp
+
+case $1 in
+  keys| list)
+    http --body ${host}/keys
+    ;;
+  key | get)
+    http --body ${host}/key/$2
+    ;;
+  find)
+    http --body ${host}/find/$2
+    ;;
+  add)
+    http ${host}/add pubkey=@$2
+    ;;
+  del* | remove)
+    http delete ${host}/key/$2
+    ;;
+  *)
+    echo "usage:"
+    echo "$0 keys"
+    echo "$0 get n"
+    echo "$0 add file"
+    echo "$0 delete n"
+    ;;
+esac

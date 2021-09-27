@@ -1,0 +1,42 @@
+#!/bin/sh
+# mariadb コマンドが他にあるので、maria でインストールするか？
+# フォワードされたポートにつなぐmysqlクライアントは -h 127.0.0.1 を忘れないように。
+# --port=3306 オプションを渡しても、-h localhost があるときは
+# UNIXソケットでつなぎに行く。
+
+usage() {
+    echo "usage: $0 [start|stop|status|pfw|pfw-stop]"
+    exit 0
+}
+
+[ -z $1 ] && usage
+
+case "$1" in
+    start)
+        if [ `pidof mysqld` ]; then
+            echo mysql is already started
+        else
+            #mysql.server start
+            brew services start mariadb
+        fi
+        ;;
+    stop)
+        # mysqladmin -u root shutdown
+        # macos は逆に -u root いらない。
+        #mysqladmin shutdown
+        brew services stop mariadb
+        ;;
+    pfw-stop)
+        kill `ps ax | grep '[s]sh -fN -L 3306' | awk '{print $1}'`
+        ;;
+    pfw)
+        ssh -fN -L 3306:127.0.0.1:3306 $2
+        ;;
+    status)
+        ps axc | grep mysql
+        ps ax | grep '[s]sh -fN -L 3306'
+        ;;
+    *)
+        usage
+        ;;
+esac
