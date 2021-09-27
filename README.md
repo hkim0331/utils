@@ -13,6 +13,8 @@ $ ansible-playbook -i localhost, -c local utils.yml
 
 ## Legal
 
+Copy Free.
+
 Copyright (c) 2021 hiroshi.kimura.0331@gmail.com
 
 
