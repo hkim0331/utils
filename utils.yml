@@ -26,7 +26,7 @@
         - {src: utils/adoc}
         - {src: utils/base64.clj}
         - {src: utils/bak}
-        - {src: utils/bump-version-project.sh}
+        - {src: utils/bump-version.sh}
         - {src: utils/c2html.clj}
         - {src: utils/cprl.clj}
         - {src: utils/db-conns}

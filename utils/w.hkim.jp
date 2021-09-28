@@ -1,11 +1,9 @@
 #!/bin/sh
 #
-# origin: dotfiles/utils/w.hkim.jp
+# origin: ${where-is-me}/client.sh
 #
-# 2021-09-27 API changed. gsed is no longer required.
-#
-# update:
-# * 2020-11-19 use gsed if found
+# * 2021-09-27 API changed. gsed is no longer required.
+# * 2020-11-19 use gsed if found.
 
 URL=https://w.hkim.jp
 if [ -z "$1" ]; then
