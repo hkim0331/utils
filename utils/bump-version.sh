@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+# origin: ${utils}/utils/bump-version.sh
+#
 # bump-vesion script for clojure projects.
 # confused using macos's /usr/bin/sed. so gsed.
 #
@@ -7,17 +9,17 @@
 # The POSIX standard does not support back-references for
 # "extended" regular expressions,
 # this is a compatible extension to that standard.
-#
-# Use after adjusting for your project.
 
 if [ -z "$1" ]; then
     echo "usage: $0 <version>"
     exit
 fi
 
-SED="/bin/sed"
+# use  extended regular expressions in the script
 if [ -x "${HOMEBREW_PREFIX}/bin/gsed" ]; then
     SED="${HOMEBREW_PREFIX}/bin/gsed -E"
+else
+    SED="/usr/bin/sed -E"
 fi
 
 # project.clj
