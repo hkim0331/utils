@@ -4,8 +4,8 @@
 ;; size = 2048*MB
 ;;
 ;; no use since babashka preloaded them.
-(require '[clojure.java.shell :as shell]
-         '[clojure.string :as str])
+;; (require '[clojure.java.shell :as shell]
+;;          '[clojure.string :as str])
 
 (defn help []
   (println "mkram [size]
