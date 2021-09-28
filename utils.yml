@@ -55,7 +55,6 @@
         - {src: utils/todays-ls}
         - {src: utils/trash.clj}
         - {src: utils/tx}
-        - {src: utils/w.hkim.jp}
         - {src: utils/webrick}
         - {src: utils/wol.clj}
     - name: check suffixes
