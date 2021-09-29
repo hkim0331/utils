@@ -3,6 +3,14 @@
 dotfiles から切り離して、github へ。
 
 ## Unreleased
+* the name of subdir `utils`?
+
+
+## 0.2.0-SNAPSHOT
+### Changed
+* rename bump-version-project.sh as bump-version.sh
+  improve script (need check on linux)
+* bump-version.sh: should not include `-E` in ${SED}
 
 ## 0.1.0 - 2021-09-28
 ### Changed
