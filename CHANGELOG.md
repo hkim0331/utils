@@ -5,6 +5,7 @@ dotfiles から切り離して、github へ。
 ## Unreleased
 * the name of subdir `utils`?
 
+
 ## 0.2.0-SNAPSHOT
 ### Changed
 * rename bump-version-project.sh as bump-version.sh
