@@ -6,16 +6,6 @@
       file:
         path: ~/bin
         state: directory
-    - name: exists ~/clojure folder?
-      file:
-        path: ~/clojure
-        state: directory
-    - name: install wol.edn to ~/clojure
-      copy:
-        src: utils/wol.edn
-        dest: ~/clojure/
-        mode: 0600
-        force: yes
     - name: install usefull(?) utils/* to ~/bin/
       copy:
         src:  "{{ item.src }}"
