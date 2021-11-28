@@ -8,6 +8,7 @@
         dest: ~/Library
         mode: "0644"
         force: yes
+    - name: check ssh port
       ansible.builtin.debug:
         msg: shoule change port
     - name: exists ~/bin?
