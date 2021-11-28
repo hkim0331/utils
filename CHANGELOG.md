@@ -11,6 +11,7 @@ dotfiles から切り離して、github へ。
 * rename bump-version-project.sh as bump-version.sh
   improve script (need check on linux)
 * bump-version.sh: should not include `-E` in ${SED}
+* rename utils/ to resources/
 
 
 ## 0.1.0 - 2021-09-28
