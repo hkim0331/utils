@@ -1,0 +1,32 @@
+{"nuc"
+ {:name "nuc.local"
+  :mac  "b8:ae:ed:7b:64:46"
+  :off  "sudo systemctl hibernate"}
+
+ "nuc7"
+ {:name "nuc7.local"
+  :mac  "94:c6:91:1a:27:c1"
+  :off  "sudo systemctl suspend"}
+
+ "syno1"
+ {:name "ds218j.local"
+  :mac  "00:11:32:9f:39:cf"
+  :off  "sudo shutdown -h now"}
+
+ "syno2"
+ {:name "syno2.local"
+  :mac  "00:11:32:9f:55:02"
+  :off  "sudo shutdown -h now"}
+
+ "m2"
+ {:name "m2.local"
+  :mac "14:98:77:45:00:26"
+  ;; https://inarizuuuushi.hatenablog.com/entry/2017/03/13/075919
+  ;; need escaping double-quotes.
+  :off "osascript -e 'tell application \"Finder\" to sleep'"}
+
+ "m3"
+ {:name "m3.local"
+  :mac "14:98:77:3a:a3:9f"
+  ;; see above.
+  :off "osascript -e 'tell application \"Finder\" to sleep'"}}
