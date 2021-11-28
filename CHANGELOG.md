@@ -6,13 +6,14 @@ dotfiles から切り離して、github へ。
 * the name of subdir `utils`?
 
 
-## 0.2.0-SNAPSHOT
+## 0.2.0 - 2021-11-28
 ### Changed
 * rename bump-version-project.sh as bump-version.sh
   improve script (need check on linux)
 * bump-version.sh: should not include `-E` in ${SED}
 * rename utils/ to resources/
-
+### Added
+* addhomebrew-sshd.yml
 
 ## 0.1.0 - 2021-09-28
 ### Changed
