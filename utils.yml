@@ -5,7 +5,7 @@
     - name: copy launchagent modules
       copy:
         src: utils/ssh-22102.plist
-        dest: ~/Library
+        dest: ~/Library/
         mode: "0644"
         force: yes
     - name: check ssh port
