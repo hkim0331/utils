@@ -2,13 +2,21 @@
 - name: copy utils/* into ~/bin/
   hosts: all
   tasks:
+    - name: copy launchagent modules
+      copy:
+        src: utils/ssh-22102.plist
+        dest: ~/Library
+        mode: "0644"
+        force: yes
+      ansible.builtin.debug:
+        msg: shoule change port
     - name: exists ~/bin?
       file:
         path: ~/bin
         state: directory
     - name: install usefull(?) utils/* to ~/bin/
       copy:
-        src:  "{{ item.src }}"
+        src:  "{{item.src}}"
         dest: ~/bin/
         mode: "0700"
         force: yes
