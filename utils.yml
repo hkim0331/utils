@@ -6,47 +6,47 @@
       file:
         path: ~/bin
         state: directory
-    - name: install usefull(?) resources/* to ~/bin/
+    - name: install usefull(?) src/* to ~/bin/
       copy:
         src:  "{{item.src}}"
         dest: ~/bin/
         mode: "0700"
         force: yes
       loop:
-        - {src: resources/adoc}
-        - {src: resources/base64.clj}
-        - {src: resources/bak}
-        - {src: resources/bump-version.sh}
-        - {src: resources/c2html.clj}
-        - {src: resources/cprl.clj}
-        - {src: resources/db-conns}
-        - {src: resources/ec}
-        - {src: resources/favicon.clj}
-        - {src: resources/inet}
-        - {src: resources/into.clj}
-        - {src: resources/kill-emacs}
-        - {src: resources/mdns}
-        - {src: resources/mkram.clj}
-        - {src: resources/mount-nfs}
-        - {src: resources/my-mariadb}
-        - {src: resources/my-mongodb}
-        - {src: resources/my-postgres}
-        - {src: resources/my-redis}
-        - {src: resources/p}
-        - {src: resources/pidof}
-        - {src: resources/pk.hkim.jp}
-        - {src: resources/rmlss}
-        - {src: resources/shadow}
-        - {src: resources/symlink-clj}
-        - {src: resources/sweep}
-        - {src: resources/rmlss}
-        - {src: resources/todays}
-        - {src: resources/todays-clone}
-        - {src: resources/todays-ls}
-        - {src: resources/trash.clj}
-        - {src: resources/tx}
-        - {src: resources/webrick}
-        - {src: resources/wol.clj}
+        - {src: src/adoc}
+        - {src: src/base64.clj}
+        - {src: src/bak}
+        - {src: src/bump-version.sh}
+        - {src: src/c2html.clj}
+        - {src: src/cprl.clj}
+        - {src: src/db-conns}
+        - {src: src/ec}
+        - {src: src/favicon.clj}
+        - {src: src/inet}
+        - {src: src/into.clj}
+        - {src: src/kill-emacs}
+        - {src: src/mdns}
+        - {src: src/mkram.clj}
+        - {src: src/mount-nfs}
+        - {src: src/my-mariadb}
+        - {src: src/my-mongodb}
+        - {src: src/my-postgres}
+        - {src: src/my-redis}
+        - {src: src/p}
+        - {src: src/pidof}
+        - {src: src/pk.hkim.jp}
+        - {src: src/rmlss}
+        - {src: src/shadow}
+        - {src: src/symlink-clj}
+        - {src: src/sweep}
+        - {src: src/rmlss}
+        - {src: src/todays}
+        - {src: src/todays-clone}
+        - {src: src/todays-ls}
+        - {src: src/trash.clj}
+        - {src: src/tx}
+        - {src: src/webrick}
+        - {src: src/wol.clj}
     - name: check suffixes
       ansible.builtin.debug:
         msg: Some scripts installed under ~/bin have suffixes
