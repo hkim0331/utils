@@ -14,7 +14,6 @@ fi
 
 DB="qa"
 PSQL="psql -h localhost -U postgres -W"
-
 ${PSQL} -c "drop database ${DB}"
 createdb ${DB}
 ${PSQL} ${DB} < $1

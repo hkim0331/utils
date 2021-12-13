@@ -6,5 +6,6 @@ if [ -z $1 ]; then
     echo 'dump local postgresql database as $date-$1.sql'
     exit 1
 fi
-pg_dump -h localhost -U postgres -W qa > `date +qa-%F.sql`
+DB=qa
+pg_dump -h localhost -U postgres -W ${DB} > `date +${DB}-%F.sql`
 

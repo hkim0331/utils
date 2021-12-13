@@ -3,8 +3,9 @@
 dotfiles から切り離して、github へ。
 
 ## Unreleased
-* the name of subdir `utils`?
 
+## 0.2.1 - 2021-12-12
+* the name of subdir `utils` is `src` (was `resources`).
 
 ## 0.2.0 - 2021-11-28
 ### Changed
