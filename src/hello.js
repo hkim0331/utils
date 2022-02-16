@@ -1,6 +1,6 @@
 // web server のメンテ中などに。
 // node がインストールされてないか？
-// 
+//
 // usage:
 // % node hello.js
 //
