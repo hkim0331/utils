@@ -2,13 +2,14 @@
 - name: copy launchagent modules to Library/LaunchAgents
   hosts: all
   tasks:
-    - name: copy sshd.plist to Library/LaunchAgents/
+    - name: copy sshd-homebrew.plist to Library/LaunchAgents/
       copy:
-        src: resources/sshd-22102.plist
+        src: resources/homebrew.sshd.plist
         dest: ~/Library/LaunchAgents/
         mode: "0644"
         force: yes
     - name: check ssh port
       ansible.builtin.debug:
-        msg: shoule change port
+        msg: launchctl load -w ~/Library/LaunchAgents/sshd-homebrew.plist.
+             should change port before use.
 ...

@@ -18,10 +18,12 @@
         - {src: src/bak}
         - {src: src/bump-version.sh}
         - {src: src/c2html.clj}
+        - {src: src/cljs.sh}
         - {src: src/cprl.clj}
         - {src: src/db-conns}
         - {src: src/ec}
         - {src: src/favicon.clj}
+        - {src: src/find-versions}
         - {src: src/inet}
         - {src: src/into.clj}
         - {src: src/kill-emacs}
