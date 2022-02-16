@@ -4,10 +4,11 @@ dotfiles から切り離して、github へ。
 
 ## Unreleased
 
-## 0.3.0-SNASHOT
+## 0.3.0 - 2022-02-16
 ### Added
 - find-versions - list available coordinates
 - cljs.sh - ClojureScript browser repl starter
+- hello.js - node example web server
 
 ## 0.2.1 - 2021-12-12
 * the name of subdir `utils` is `src` (was `resources`)
