@@ -12,7 +12,7 @@
         dest: ~/bin/
         mode: "0700"
         force: yes
-      loop:
+        loop:
         - {src: src/adoc}
         - {src: src/base64.clj}
         - {src: src/bak}
