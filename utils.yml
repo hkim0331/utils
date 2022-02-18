@@ -1,18 +1,18 @@
 ---
-- name: copy resouces/* into ~/bin/
+- name: copy resouces/* into ~/bin/.
   hosts: all
   tasks:
     - name: exists ~/bin?
       file:
         path: ~/bin
         state: directory
-    - name: install usefull(?) src/* to ~/bin/
+    - name: install usefull src/* to ~/bin/.
       copy:
         src:  "{{item.src}}"
         dest: ~/bin/
         mode: "0700"
         force: yes
-        loop:
+      loop:
         - {src: src/adoc}
         - {src: src/base64.clj}
         - {src: src/bak}
