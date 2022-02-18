@@ -4,7 +4,7 @@
 
 ## INSTALL
 
-utils/ 中のスクリプトを utils.yml で選んで ~/bin にインストールする。
+src/ 中のスクリプトを utils.yml で選んで ~/bin にインストールする。
 別に ansible 使わんで cp でも install でも。
 
 ```sh

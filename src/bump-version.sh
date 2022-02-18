@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# origin: ${utils}/utils/bump-version.sh
+# origin: ${utils}/src/bump-version.sh
 #
 # bump-vesion script for clojure projects.
 # confused using macos's /usr/bin/sed. so gsed.
