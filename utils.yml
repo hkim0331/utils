@@ -1,63 +1,54 @@
 ---
-- name: copy utils/* into ~/bin/
+- name: copy resouces/* into ~/bin/
   hosts: all
   tasks:
     - name: exists ~/bin?
       file:
         path: ~/bin
         state: directory
-    - name: exists ~/clojure folder?
-      file:
-        path: ~/clojure
-        state: directory
-    - name: install wol.edn to ~/clojure
+    - name: install usefull(?) src/* to ~/bin/
       copy:
-        src: utils/wol.edn
-        dest: ~/clojure/
-        mode: 0600
-        force: yes
-    - name: install usefull(?) utils/* to ~/bin/
-      copy:
-        src:  "{{ item.src }}"
+        src:  "{{item.src}}"
         dest: ~/bin/
         mode: "0700"
         force: yes
       loop:
-        - {src: utils/adoc}
-        - {src: utils/base64.clj}
-        - {src: utils/bak}
-        - {src: utils/bump-version-project.sh}
-        - {src: utils/c2html.clj}
-        - {src: utils/cprl.clj}
-        - {src: utils/db-conns}
-        - {src: utils/ec}
-        - {src: utils/favicon.clj}
-        - {src: utils/inet}
-        - {src: utils/into.clj}
-        - {src: utils/kill-emacs}
-        - {src: utils/mdns}
-        - {src: utils/mkram.clj}
-        - {src: utils/mount-nfs}
-        - {src: utils/my-mariadb}
-        - {src: utils/my-mongodb}
-        - {src: utils/my-postgres}
-        - {src: utils/my-redis}
-        - {src: utils/p}
-        - {src: utils/pidof}
-        - {src: utils/pk.hkim.jp}
-        - {src: utils/rmlss}
-        - {src: utils/shadow}
-        - {src: utils/symlink-clj}
-        - {src: utils/sweep}
-        - {src: utils/rmlss}
-        - {src: utils/todays}
-        - {src: utils/todays-clone}
-        - {src: utils/todays-ls}
-        - {src: utils/trash.clj}
-        - {src: utils/tx}
-        - {src: utils/w.hkim.jp}
-        - {src: utils/webrick}
-        - {src: utils/wol.clj}
+        - {src: src/adoc}
+        - {src: src/base64.clj}
+        - {src: src/bak}
+        - {src: src/bump-version.sh}
+        - {src: src/c2html.clj}
+        - {src: src/cljs.sh}
+        - {src: src/cprl.clj}
+        - {src: src/db-conns}
+        - {src: src/ec}
+        - {src: src/favicon.clj}
+        - {src: src/find-versions}
+        - {src: src/inet}
+        - {src: src/into.clj}
+        - {src: src/kill-emacs}
+        - {src: src/mdns}
+        - {src: src/mkram.clj}
+        - {src: src/mount-nfs}
+        - {src: src/my-mariadb}
+        - {src: src/my-mongodb}
+        - {src: src/my-postgres}
+        - {src: src/my-redis}
+        - {src: src/p}
+        - {src: src/pidof}
+        - {src: src/pk.hkim.jp}
+        - {src: src/rmlss}
+        - {src: src/shadow}
+        - {src: src/symlink-clj}
+        - {src: src/sweep}
+        - {src: src/rmlss}
+        - {src: src/todays}
+        - {src: src/todays-clone}
+        - {src: src/todays-ls}
+        - {src: src/trash.clj}
+        - {src: src/tx}
+        - {src: src/webrick}
+        - {src: src/wol.clj}
     - name: check suffixes
       ansible.builtin.debug:
         msg: Some scripts installed under ~/bin have suffixes

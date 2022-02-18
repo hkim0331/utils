@@ -3,6 +3,28 @@
 dotfiles から切り離して、github へ。
 
 ## Unreleased
+- src のほかに、src.stop を作ったらどうか？
+  src は bin へ行く。
+  src.stop は bin から戻す。
+  開発中は src.dev とか。
+
+
+## 0.3.0 - 2022-02-18
+### Added
+- find-versions - list available coordinates
+- cljs.sh - ClojureScript browser repl starter
+
+## 0.2.1 - 2021-12-12
+* the name of subdir `utils` is `src` (was `resources`)
+
+## 0.2.0 - 2021-11-28
+### Changed
+* rename bump-version-project.sh as bump-version.sh
+  improve script (need check on linux)
+* bump-version.sh: should not include `-E` in ${SED}
+* rename utils/ to resources/
+### Added
+* addhomebrew-sshd.yml
 
 ## 0.1.0 - 2021-09-28
 ### Changed
@@ -11,5 +33,6 @@ dotfiles から切り離して、github へ。
 ### Added
 * c2html
   C のソースファイルから HTML を生成する。adoc 経由。
+
 
 ## これより古いののドキュメントはぼちぼち。
