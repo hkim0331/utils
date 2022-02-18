@@ -3,8 +3,13 @@
 dotfiles から切り離して、github へ。
 
 ## Unreleased
+- src のほかに、src.stop を作ったらどうか？
+  src は bin へ行く。
+  src.stop は bin から戻す。
+  開発中は src.dev とか。
 
-## 0.3.0-SNASHOT
+
+## 0.3.0 - 2022-02-18
 ### Added
 - find-versions - list available coordinates
 - cljs.sh - ClojureScript browser repl starter
