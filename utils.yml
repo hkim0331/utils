@@ -9,46 +9,47 @@
     - name: install usefull src/* to ~/bin/.
       copy:
         src:  "{{item.src}}"
-        dest: ~/bin/
+        dest: "{{item.dest}}"
         mode: "0700"
         force: yes
       loop:
-        - {src: src/adoc}
-        - {src: src/base64.clj}
-        - {src: src/bak}
-        - {src: src/bump-version.sh}
-        - {src: src/c2html.clj}
-        - {src: src/cljs.sh}
-        - {src: src/cprl.clj}
-        - {src: src/db-conns}
-        - {src: src/ec}
-        - {src: src/favicon.clj}
-        - {src: src/find-versions}
-        - {src: src/inet}
-        - {src: src/into.clj}
-        - {src: src/kill-emacs}
-        - {src: src/mdns}
-        - {src: src/mkram.clj}
-        - {src: src/mount-nfs}
-        - {src: src/my-mariadb}
-        - {src: src/my-mongodb}
-        - {src: src/my-postgres}
-        - {src: src/my-redis}
-        - {src: src/p}
-        - {src: src/pidof}
-        - {src: src/pk.hkim.jp}
-        - {src: src/rmlss}
-        - {src: src/shadow}
-        - {src: src/symlink-clj}
-        - {src: src/sweep}
-        - {src: src/rmlss}
-        - {src: src/todays}
-        - {src: src/todays-clone}
-        - {src: src/todays-ls}
-        - {src: src/trash.clj}
-        - {src: src/tx}
-        - {src: src/webrick}
-        - {src: src/wol.clj}
+        - {src: src/adoc.sh, dest: ~/bin/adoc}
+        - {src: src/bak.sh, dest: ~/bin/bak}
+        - {src: src/base64.clj, dest: ~/bin/base64}
+        - {src: src/bump-version.sh, dest: ~/bin/bump-version}
+        - {src: src/c2html.clj, dest: ~/bin/c2html}
+        - {src: src/cljs.sh, dest: ~/bin/cljs.sh}
+        - {src: src/cprl.clj, dest: ~/bin/cprl}
+        - {src: src/db-conns, dest: ~/bin/db-conns}
+        - {src: src/ec.sh, dest: ~/bin/ec}
+        - {src: src/favicon.clj, dest: ~/bin/favicon}
+        - {src: src/find-versions.sh, dest: ~/bin/find-versions}
+        - {src: src/hello.js, dest: ~/bin/hello.js}
+        - {src: src/inet.sh, dest: ~/bin/inet}
+        - {src: src/into.clj, dest: ~/bin/into.clj}
+        - {src: src/kill-emacs.sh, dest: ~/bin/kill-emacs}
+        - {src: src/mdns, dest: ~/bin/mdns}
+        - {src: src/mkram.clj, dest: ~/bin/mkram}
+        - {src: src/mount-nfs, dest: ~/bin/mount-nfs}
+        - {src: src/my-mariadb, dest: ~/bin/my-mariadb}
+        - {src: src/my-mongodb, dest: ~/bin/my-mongodb}
+        - {src: src/my-postgres, dest: ~/bin/my-postgres}
+        - {src: src/my-redis, dest: ~/bin/my-redis}
+        - {src: src/p, dest: ~/bin/p}
+        - {src: src/pidof.sh, dest: ~/bin/pidof}
+        - {src: src/pk.hkim.jp, dest: ~/bin/pk.hkim.jp}
+        - {src: src/rmlss, dest: ~/bin/rmlss}
+        - {src: src/shadow, dest: ~/bin/shadow}
+        - {src: src/symlink-clj, dest: ~/bin/symlink-clj}
+        - {src: src/sweep.rb, dest: ~/bin/sweep}
+        - {src: src/rmlss, dest: ~/bin/rmlss}
+        - {src: src/todays-clone.sh, dest: ~/bin/todays-clone}
+        - {src: src/todays-ls.sh, dest: ~/bin/todays-ls}
+        - {src: src/todays.sh, dest: ~/bin/todays}
+        - {src: src/trash.clj, dest: ~/bin/trash}
+        - {src: src/tx.sh, dest: ~/bin/tx}
+        - {src: src/webrick.rb, dest: ~/bin/webrick}
+        - {src: src/wol.clj, dest: ~/bin/wol}
     - name: check suffixes
       ansible.builtin.debug:
         msg: Some scripts installed under ~/bin have suffixes

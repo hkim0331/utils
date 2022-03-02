@@ -3,6 +3,8 @@
 dotfiles から切り離して、github へ。
 
 ## Unreleased
+- たぶん、俺の ansible の使い方は違う。
+
 - src のほかに、src.stop を作ったらどうか？
   src は bin へ行く。
   src.stop は bin から戻す。
