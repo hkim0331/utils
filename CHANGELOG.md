@@ -14,9 +14,10 @@ dotfiles から切り離して、github へ。
   ~/bin 等にインストールするときは.sh, .clj のサフィックスを落とせないか？
   いちいち手で書かなくちゃか？
 
-## 0.3.2-SNAPSHOT
+## 0.3.2 - 2022-03-02
 ### Changed
 - hello.js - can take -p port -m 'message' option. 2022-03-01
+- src/* にサフィックスを付与（全部じゃない）。
 
 ## 0.3.1 - 2022-02-18
 ### Fixed
