@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# origin: ${utils}/pidof
+# origin: ${utils}/pidof.sh
 #
 #http://www.macosxhints.com/article.php?story=20030618114543169
 
