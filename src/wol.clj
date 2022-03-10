@@ -2,10 +2,10 @@
 ;;;
 ;;; origin: ${dotfiles}/utils/wol.clj
 ;;;
-;;; usage: wol [on|off|status] host1 host2 ...
+;;; usage: wol [on|up|off|down|status] host1 host2 ...
 ;;;        wol list
 ;;;        wol help
-;;;
+;;;        wol version
 ;;; See README.md and CHANGELOG.md
 
 (require '[clojure.java.shell :as shell]
@@ -13,8 +13,7 @@
 
 (defn- usage []
   (println "usage: wol [on|off|status] host1 host2 ...")
-  (println "       wol list")
-  (println "       wol [help|version]"))
+  (println "       wol [list|help|version]"))
 
 (def ^:private version "0.2.0")
 
@@ -31,7 +30,7 @@
                          "-t" (str timeout))))))
 
 (defn- wakeup?
-  "print '.' until `host` wakes up."
+  "print '.' until `(ping? host)` returns true."
   [host]
   (loop [st false]
     (if-not st
@@ -41,21 +40,33 @@
         (recur (ping? host)))
       (println host "wakes up."))))
 
-(defn- verb [& args] (keyword (first args)))
-
-(defmulti wol verb)
-
-(defmethod wol :on [_ {:keys [name mac]}]
+(defn- up [name mac]
   (if (ping? name)
     "already on"
     (and
      (shell/sh "wakeonlan" mac)
      (wakeup? name))))
 
-(defmethod wol :off [_ {:keys [name off]}]
+(defn- down [name off]
   (if (ping? name)
     (shell/sh "ssh" name off)
     "sleeping"))
+
+(defn- verb [& args] (keyword (first args)))
+
+(defmulti wol verb)
+
+(defmethod wol :on [_ {:keys [name mac]}]
+  (up name mac))
+
+(defmethod wol :up [_ {:keys [name mac]}]
+  (up name mac))
+
+(defmethod wol :off [_ {:keys [name off]}]
+  (down name off))
+
+(defmethod wol :down [_ {:keys [name off]}]
+  (down name off))
 
 (defmethod wol :status [_ {:keys [name]}]
   (ping? name))
