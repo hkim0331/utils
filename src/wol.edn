@@ -3,7 +3,17 @@
   :mac  "b8:ae:ed:7b:64:46"
   :off  "sudo systemctl hibernate"}
 
+ "nuc.local"
+ {:name "nuc.local"
+  :mac  "b8:ae:ed:7b:64:46"
+  :off  "sudo systemctl hibernate"}
+
  "nuc7"
+ {:name "nuc7.local"
+  :mac  "94:c6:91:1a:27:c1"
+  :off  "sudo systemctl suspend"}
+
+ "nuc7.local"
  {:name "nuc7.local"
   :mac  "94:c6:91:1a:27:c1"
   :off  "sudo systemctl suspend"}
@@ -13,7 +23,17 @@
   :mac  "00:11:32:9f:39:cf"
   :off  "sudo shutdown -h now"}
 
+ "syno1.local"
+ {:name "ds218j.local"
+  :mac  "00:11:32:9f:39:cf"
+  :off  "sudo shutdown -h now"}
+
  "syno2"
+ {:name "syno2.local"
+  :mac  "00:11:32:9f:55:02"
+  :off  "sudo shutdown -h now"}
+
+ "syno2.local"
  {:name "syno2.local"
   :mac  "00:11:32:9f:55:02"
   :off  "sudo shutdown -h now"}
