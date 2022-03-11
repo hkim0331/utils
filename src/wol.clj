@@ -1,5 +1,4 @@
 #!/usr/bin/env bb
-;;;
 ;;; origin: ${dotfiles}/utils/wol.clj
 ;;;
 ;;; usage: wol [on|up|off|down|status] host1 host2 ...
@@ -7,6 +6,8 @@
 ;;;        wol help
 ;;;        wol version
 ;;; See README.md and CHANGELOG.md
+;;;
+;;; 2022-03-11 did not reflect git. do it again.
 
 (require '[clojure.java.shell :as shell]
          '[clojure.edn :as edn])
