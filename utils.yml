@@ -53,7 +53,7 @@
         - {src: src/wol.clj, dest: ~/bin/wol}
     - name: check suffixes
       ansible.builtin.debug:
-`        msg: Some scripts installed under ~/bin have suffixes
+        msg: Some scripts installed under ~/bin have suffixes
              such as `.clj` and `.sh`.
              Consider remove the suffixes or symlink before use.
 ...
