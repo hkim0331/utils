@@ -4,6 +4,8 @@ dotfiles から切り離して、github へ。
 
 ## Unreleased
 - たぶん、俺の ansible の使い方は違う。
+  コピーを自動化するのが目的ではなく、
+  期待する状態に持っていくためのコードを書くんだな。
 
 - src のほかに、src.stop を作ったらどうか？
   src は bin へ行く。
@@ -13,6 +15,14 @@ dotfiles から切り離して、github へ。
 - 開発中はサフィックスがあったほうがいいのだが、
   ~/bin 等にインストールするときは.sh, .clj のサフィックスを落とせないか？
   いちいち手で書かなくちゃか？
+  - src-enabled を作り、src/script へのシンボリックリンクを集める。
+  - この時、リンクの名前には拡張子を除いておく。
+  - インストールするのは src-enabled にあるものだけ。ってのはどうか？
+
+
+## 0.3.3 - 2022-03-14
+### Added
+- added src/refresh-m2.sh, updated utils.yml for it.
 
 ## 0.3.2 - 2022-03-02
 ### Changed
