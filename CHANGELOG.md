@@ -15,13 +15,9 @@ dotfiles から切り離して、github へ。
 - 開発中はサフィックスがあったほうがいいのだが、
   ~/bin 等にインストールするときは.sh, .clj のサフィックスを落とせないか？
   いちいち手で書かなくちゃか？
-  - src-enabled を作り、src/script へのシンボリックリンクを集める。
-  - この時、リンクの名前には拡張子を除いておく。
-  - インストールするのは src-enabled にあるものだけ。ってのはどうか？
 
 ## 0.3.4-SNAPSHOT
-- ansible よりも cp?
-
+- ansible-playbook -i localhost, -c local よりも cp?
 
 ## 0.3.3 - 2022-03-14
 ### Added
