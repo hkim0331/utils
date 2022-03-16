@@ -3,6 +3,37 @@
 dotfiles から切り離して、github へ。
 
 ## Unreleased
+- たぶん、俺の ansible の使い方は違う。
+  コピーを自動化するのが目的ではなく、
+  期待する状態に持っていくためのコードを書くんだな。
+
+- src のほかに、src.stop を作ったらどうか？
+  src は bin へ行く。
+  src.stop は bin から戻す。
+  開発中は src.dev とか。
+
+- 開発中はサフィックスがあったほうがいいのだが、
+  ~/bin 等にインストールするときは.sh, .clj のサフィックスを落とせないか？
+  いちいち手で書かなくちゃか？
+
+- which is better, make or ansible?
+
+## 0.3.4 - 2022-03-16
+- ansible-playbook -i localhost, -c local よりも cp?
+- make install
+
+## 0.3.3 - 2022-03-14
+### Added
+- added src/refresh-m2.sh, updated utils.yml for it.
+
+## 0.3.2 - 2022-03-02
+### Changed
+- hello.js - can take -p port -m 'message' option. 2022-03-01
+- src/* にサフィックスを付与（全部じゃない）。
+
+## 0.3.1 - 2022-02-18
+### Fixed
+- tag 0.3.0 already taken.
 
 ## 0.3.0 - 2022-02-16
 ### Added

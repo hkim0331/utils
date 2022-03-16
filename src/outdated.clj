@@ -12,6 +12,7 @@
                          "deps.edn"))
               edn/read-string
               :deps))
+
 (def with-release (zipmap (keys deps)
                           (map #(assoc % :mvn/version "RELEASE")
                                (vals deps))))
