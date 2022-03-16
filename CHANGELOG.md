@@ -16,8 +16,11 @@ dotfiles から切り離して、github へ。
   ~/bin 等にインストールするときは.sh, .clj のサフィックスを落とせないか？
   いちいち手で書かなくちゃか？
 
-## 0.3.4-SNAPSHOT
+- which is better, make or ansible?
+
+## 0.3.4 - 2022-03-16
 - ansible-playbook -i localhost, -c local よりも cp?
+- make install
 
 ## 0.3.3 - 2022-03-14
 ### Added
