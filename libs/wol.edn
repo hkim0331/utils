@@ -1,0 +1,14 @@
+{"label"
+ {:name "name.local"
+  :mac  "mac.add.ress"
+  :off  "script to shutdown host 'label'"}
+
+ "label2"
+ {:name "other.local"
+  :mac  "mac.add.ress"
+  :off  "script to shutdown host 'label'"}
+
+ "label3"
+ {:name "another.local"
+  :mac  "mac.add.ress"
+  :off  "script to shutdown host 'label'"}}

@@ -35,9 +35,11 @@
         - {src: src/my-mongodb, dest: ~/bin/my-mongodb}
         - {src: src/my-postgres, dest: ~/bin/my-postgres}
         - {src: src/my-redis, dest: ~/bin/my-redis}
+        - {src: src/outdated.clj, dest: ~/bin/outdated}
         - {src: src/p, dest: ~/bin/p}
         - {src: src/pidof.sh, dest: ~/bin/pidof}
         - {src: src/pk.hkim.jp, dest: ~/bin/pk.hkim.jp}
+        - {src: src/refresh-m2.sh, dest: ~/bin/refresh-m2}
         - {src: src/rmlss, dest: ~/bin/rmlss}
         - {src: src/shadow, dest: ~/bin/shadow}
         - {src: src/symlink-clj, dest: ~/bin/symlink-clj}
