@@ -6,17 +6,17 @@ dotfiles から切り離して、github へ。
 - たぶん、俺の ansible の使い方は違う。
   コピーを自動化するのが目的ではなく、
   期待する状態に持っていくためのコードを書くんだな。
-
 - src のほかに、src.stop を作ったらどうか？
   src は bin へ行く。
   src.stop は bin から戻す。
   開発中は src.dev とか。
-
 - 開発中はサフィックスがあったほうがいいのだが、
   ~/bin 等にインストールするときは.sh, .clj のサフィックスを落とせないか？
   いちいち手で書かなくちゃか？
-
 - which is better, make or ansible?
+
+## 0.3.5 - 2022-03-28
+- fix typo occured in 0.3.4
 
 ## 0.3.4 - 2022-03-16
 - ansible-playbook -i localhost, -c local よりも cp?
