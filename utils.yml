@@ -1,5 +1,5 @@
 ---
-- name: copy resouces/* into ~/bin/.
+- name: copy src/* into ~/bin/.
   hosts: all
   tasks:
     - name: exists ~/bin?
