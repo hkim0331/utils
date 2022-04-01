@@ -1,12 +1,12 @@
 ---
-- name: copy src/* into ~/bin/.
+- name: copy src/* into ~/bin/
   hosts: all
   tasks:
     - name: exists ~/bin?
       file:
         path: ~/bin
         state: directory
-    - name: install usefull src/* to ~/bin/.
+    - name: install usefull src/* to ~/bin/
       copy:
         src:  "{{item.src}}"
         dest: "{{item.dest}}"
@@ -39,6 +39,7 @@
         - {src: src/p, dest: ~/bin/p}
         - {src: src/pidof.sh, dest: ~/bin/pidof}
         - {src: src/pk.hkim.jp, dest: ~/bin/pk.hkim.jp}
+        - {src: src/psj.sh, dest: ~/bin/psj}
         - {src: src/refresh-m2.sh, dest: ~/bin/refresh-m2}
         - {src: src/rm-local-snapshots.sh, dest: ~/bin/rm-local-snapshots}
         - {src: src/rm-trailing-spaces.sh, dest: ~/bin/rm-trailing-spaces}
