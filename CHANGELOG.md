@@ -15,6 +15,9 @@ dotfiles から切り離して、github へ。
   いちいち手で書かなくちゃか？
 - which is better, make or ansible?
 
+## 0.4.0-SNAPSHOT
+- hello.js requires `#!/usr/bin/env node`
+
 ## 0.3.5 - 2022-03-28
 - fix typo occured in 0.3.4
 
