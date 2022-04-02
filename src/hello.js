@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // web server のメンテ中などに。
 // node がインストールされてないか？
 //
