@@ -46,6 +46,7 @@
         - {src: src/shadow, dest: ~/bin/shadow}
         - {src: src/symlink-clj, dest: ~/bin/symlink-clj}
         - {src: src/sweep.rb, dest: ~/bin/sweep}
+        - {src: src/to-ramdisk.sh, dest: ~/bin/to-radisk}
         - {src: src/todays-clone.sh, dest: ~/bin/todays-clone}
         - {src: src/todays-ls.sh, dest: ~/bin/todays-ls}
         - {src: src/todays.sh, dest: ~/bin/todays}
