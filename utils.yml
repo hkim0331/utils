@@ -28,6 +28,7 @@
         - {src: src/inet.sh, dest: ~/bin/inet}
         - {src: src/into.clj, dest: ~/bin/into.clj}
         - {src: src/kill-emacs.sh, dest: ~/bin/kill-emacs}
+        - {src: src/killj.sh, dest: ~/bin/killj}
         - {src: src/mdns, dest: ~/bin/mdns}
         - {src: src/mkram.clj, dest: ~/bin/mkram}
         - {src: src/mount-nfs.sh, dest: ~/bin/mount-nfs}
