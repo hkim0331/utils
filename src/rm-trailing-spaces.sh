@@ -7,8 +7,8 @@ if [ -z "$1" ]; then
 fi
 
 # macos /usr/bin/sed is not good.
-if [ -f /opt/homebrew/bin/gsed ]; then
-    SED=/opt/homebrew/bin/gsed
+if [ -f ${HOMEBREW_PREFIX}/bin/gsed ]; then
+    SED=${HOMEBREW_PREFIX}/bin/gsed
 else
     SED=/usr/bin/sed
 fi
