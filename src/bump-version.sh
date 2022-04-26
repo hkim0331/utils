@@ -6,9 +6,10 @@
 # confused using macos's /usr/bin/sed. so gsed.
 #
 # CAUSION
-# The POSIX standard does not support back-references for
-# "extended" regular expressions,
-# this is a compatible extension to that standard.
+# The POSIX standard regular expressions does not support back-references.
+# Back-references are considered as an "extended" faciliy.
+# This script, bump-version.sh, uses the extended function.
+# So, gnu-sed on macOS.
 
 if [ -z "$1" ]; then
     echo "usage: $0 <version>"

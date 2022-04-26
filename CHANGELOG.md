@@ -19,6 +19,9 @@ dotfiles から切り離して、github へ。
 - hello.js requires `#!/usr/bin/env node`
 - killj.js
 
+## 0.3.6 - 2022-04-15
+- utils 0.3.6 does not work on penguin.
+
 ## 0.3.5 - 2022-03-28
 - fix typo occured in 0.3.4
 
