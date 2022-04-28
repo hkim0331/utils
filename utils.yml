@@ -40,6 +40,7 @@
         - {src: src/p, dest: ~/bin/p}
         - {src: src/pidof.sh, dest: ~/bin/pidof}
         - {src: src/pk.hkim.jp, dest: ~/bin/pk.hkim.jp}
+        - {src: src/projects.sh, dest: ~/projects/projects.sh}
         - {src: src/psj.sh, dest: ~/bin/psj}
         - {src: src/refresh-m2.sh, dest: ~/bin/refresh-m2}
         - {src: src/rm-local-snapshots.sh, dest: ~/bin/rm-local-snapshots}
@@ -57,7 +58,5 @@
         - {src: src/wol.clj, dest: ~/bin/wol}
     - name: check suffixes
       ansible.builtin.debug:
-        msg: Some scripts installed under ~/bin have suffixes
-             such as `.clj` and `.sh`.
-             Consider remove the suffixes or symlink before use.
+        msg: currently no messages.
 ...
