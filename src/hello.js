@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // web server のメンテ中などに。
 // node がインストールされてないか？
-//
+// 
 // usage:
 // $ node hello.js [-p port] [-m message]
 
