@@ -1,6 +1,9 @@
 #!/usr/bin/env node
-// web server のメンテ中などに。
-// node がインストールされてないか？
+// ポートを開くとメッセージを表示する（だけ）。
+// web server のメンテ中などにどうか。
+// web server なら /opt/homebrew/bin/http-server を使おう。
+//
+// requires: node
 //
 // usage:
 // $ node hello.js [-p port] [-m message]

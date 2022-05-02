@@ -1,4 +1,5 @@
 #!/bin/sh
+#
 # origin: ${utils}/src/projects.sh
 # synopsis: dirs のリポジトリを git pull/push する。
 
@@ -37,9 +38,9 @@ finish () {
 
 if [ -z $1 ]; then
     echo $dirs
-elif [ $1 = 'start' ]; then
+elif [ $1 = 'start' -o $1 = 'pull' ]; then
     start
-elif [ $1 = 'finish' ]; then
+elif [ $1 = 'finish' -o $1 = 'push' ]; then
     finish
 else
     echo "usage $0 [start|finish]"

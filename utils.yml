@@ -36,6 +36,7 @@
         - {src: src/my-mongodb, dest: ~/bin/my-mongodb}
         - {src: src/my-postgres, dest: ~/bin/my-postgres}
         - {src: src/my-redis, dest: ~/bin/my-redis}
+        - {src: src/node-serv.js, dest: ~/bin/node-serv.js}
         - {src: src/outdated.clj, dest: ~/bin/outdated}
         - {src: src/p, dest: ~/bin/p}
         - {src: src/pidof.sh, dest: ~/bin/pidof}
