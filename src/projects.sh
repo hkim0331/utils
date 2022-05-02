@@ -1,9 +1,20 @@
 #!/bin/sh
 #
 # origin: ${utils}/src/projects.sh
-# synopsis: dirs のリポジトリを git pull/push する。
+#
+# synopsis: dirs のプロジェクトを git pull/push するプライベートコマンド。
+#
+# FIXME: それぞれのサブコマンドでループを書いているのはダサい。
+#
 
 dirs="l22 literacy mt2 qa typing-ex"
+
+status () {
+    for i in $dirs; do
+        cd $i
+        git status
+    done
+}
 
 # develop ブランチをチェックアウトし、プルする。
 start_sub () {
@@ -36,13 +47,16 @@ finish () {
     done
 }
 
+
 if [ -z $1 ]; then
     echo $dirs
-elif [ $1 = 'start' -o $1 = 'pull' ]; then
+elif [ $1 = 'status' ]; then
+    status
+elif [ $1 = 'pull' -o $1 = 'start']; then
     start
-elif [ $1 = 'finish' -o $1 = 'push' ]; then
+elif [ $1 = 'push' -o $1 = 'finish' ]; then
     finish
 else
-    echo "usage $0 [start|finish]"
+    echo "usage $0 [start|pull|finish|push]"
     echo "when no args, list projects name."
 fi
