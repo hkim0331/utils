@@ -1,5 +1,6 @@
 #!/bin/sh
 
+DB=l22
 if [ -z "$1" ]; then
     echo "usage: $0 yyyy-mm-dd.sql"
     echo "       $0 --last"
@@ -7,15 +8,13 @@ if [ -z "$1" ]; then
     echo mind: this script drops database first.
     exit 1
 elif [ "--last" = "$1" ]; then
-    DUMP=`ls -t l22* | head -1`
+    DUMP=`ls -t ${DB}* | head -1`
 else
     DUMP=$1
 fi
 
-#echo ${DUMP}
-
 PSQL="psql -h localhost -U postgres"
-${PSQL} -c "drop database l22"
-${PSQL} -c "create database l22 owner='postgres'"
-${PSQL} l22 < ${DUMP}
+${PSQL} -c "drop database ${DB}"
+${PSQL} -c "create database ${DB} owner='postgres'"
+${PSQL} ${DB} < ${DUMP}
 
