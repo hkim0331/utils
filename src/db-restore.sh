@@ -1,22 +1,21 @@
 #!/bin/sh
-# under construction
-
-# FIXME: how about define database to restore app by app,
-#        rather than using $1 as database name,
-#        it is more safety. 2021-10-25
 
 if [ -z "$1" ]; then
-    echo usage: $0 yyyy-mm-dd.dump
-    echo restore postgresql database from yyyy-mm-dd.dump
-    echo caustion: mind this script drops database first.
+    echo "usage: $0 yyyy-mm-dd.sql"
+    echo "       $0 --last"
+    echo restore postgresql database from db-yyyy-mm-dd.sql
+    echo mind: this script drops database first.
     exit 1
+elif [ "--last" = "$1" ]; then
+    DUMP=`ls -t l22* | head -1`
+else
+    DUMP=$1
 fi
 
-DB="qa"
-PSQL="psql -h localhost -U postgres -W"
-${PSQL} -c "drop database ${DB}"
-createdb ${DB}
-${PSQL} ${DB} < $1
+#echo ${DUMP}
 
-
+PSQL="psql -h localhost -U postgres"
+${PSQL} -c "drop database l22"
+${PSQL} -c "create database l22 owner='postgres'"
+${PSQL} l22 < ${DUMP}
 
