@@ -15,12 +15,14 @@ dotfiles から切り離して、github へ。
   いちいち手で書かなくちゃか？
 - which is better, make or ansible?
 - release monthly or seasonly?
+- weekly or montly release?
 
 
 ## 0.4.0-SNAPSHOT
 - hello.js requires `#!/usr/bin/env node`
 - killj.sh
 - 2022-04-28, projects.sh, mainting projects under ~/projects folder
+- 2022-05-07, src/db-restore --last option
 
 ## 0.3.6 - 2022-04-15
 - utils 0.3.6 does not work on penguin.
