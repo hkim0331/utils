@@ -1,4 +1,5 @@
 #!/bin/sh
+# 2022-05-07 --last option
 
 DB=l22
 if [ -z "$1" ]; then
