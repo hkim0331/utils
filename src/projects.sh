@@ -13,6 +13,7 @@ status () {
     for i in $dirs; do
         cd $i
         git status
+        echo '---'
     done
 }
 
@@ -52,7 +53,7 @@ if [ -z $1 ]; then
     echo $dirs
 elif [ $1 = 'status' ]; then
     status
-elif [ $1 = 'pull' -o $1 = 'start']; then
+elif [ $1 = 'pull' -o $1 = 'start'  ]; then
     start
 elif [ $1 = 'push' -o $1 = 'finish' ]; then
     finish
