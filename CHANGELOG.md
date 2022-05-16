@@ -24,6 +24,7 @@ dotfiles から切り離して、github へ。
 - 2022-04-28, projects.sh, mainting projects under ~/projects folder
 - 2022-05-07, src/db-restore, add --last option
 - 2022-05-08, src/ec.sh, dotfiles/emacs.d/inits/exec-path-from-shell.el
+- 2022-05-13, src/killp.sh kill listening process
 
 ## 0.3.6 - 2022-04-15
 - utils 0.3.6 does not work on penguin.
