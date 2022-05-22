@@ -16,7 +16,7 @@ if [ -z "$1" ]; then
     exit
 fi
 
-# use  extended regular expressions in the script
+# using extended regular expressions in this script, so,
 if [ -x "${HOMEBREW_PREFIX}/bin/gsed" ]; then
     SED="${HOMEBREW_PREFIX}/bin/gsed -E"
 else
