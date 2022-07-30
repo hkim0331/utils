@@ -8,6 +8,9 @@
 ;;; See README.md and CHANGELOG.md
 ;;;
 ;;; 2022-03-11 did not reflect git. do it again.
+;;;
+;;; FIXME:
+;;; from m3, wol off nuc stops nuc7. 2022-07-30.
 
 (require '[clojure.java.shell :as shell]
          '[clojure.edn :as edn])
