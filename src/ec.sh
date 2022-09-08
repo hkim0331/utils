@@ -1,4 +1,8 @@
 #!/bin/sh
+#
+# ## 2022-09-08 read manuals!
+#    emacsclient --alternate-editor="" already has this function.
+#
 # emacs client launcher along with emacs server
 # update: 2019-01-23
 # 2022-05-07 brew, but exec-path doesn't include /opt/homebrew/bin etc.
@@ -20,5 +24,4 @@ if [ ! -x ${TMPDIR}/emacs`id -u`/server ]; then
 fi
 
 # terminal emacs. for console emacs, try -c.
-exec emacsclient --alternate-editor="" -t "$@"
-
+exec emacsclient -t "$@"

@@ -6,25 +6,21 @@ dotfiles から切り離して、github へ。
 - たぶん、俺の ansible の使い方は違う。
   コピーを自動化するのが目的ではなく、
   期待する状態に持っていくためのコードを書くんだな。
-- src のほかに、src.stop を作ったらどうか？
-  src は bin へ行く。
-  src.stop は bin から戻す。
-  開発中は src.dev とか。
 - 開発中はサフィックスがあったほうがいいのだが、
   ~/bin 等にインストールするときは.sh, .clj のサフィックスを落とせないか？
   いちいち手で書かなくちゃか？
 - which is better, make or ansible?
 - release monthly or seasonly?
-- weekly or montly release?
 
 
-## 0.4.0-SNAPSHOT
+## 0.4.0 - 2022-09-08
 - hello.js requires `#!/usr/bin/env node`
 - killj.sh
 - 2022-04-28, projects.sh, mainting projects under ~/projects folder
 - 2022-05-07, src/db-restore, add --last option
 - 2022-05-08, src/ec.sh, dotfiles/emacs.d/inits/exec-path-from-shell.el
 - 2022-05-13, src/killp.sh kill listening process
+- 2022-09-08, stop ec. emacsclient has the function already.
 
 ## 0.3.6 - 2022-04-15
 - utils 0.3.6 does not work on penguin.
