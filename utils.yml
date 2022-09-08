@@ -29,6 +29,7 @@
         - {src: src/into.clj, dest: ~/bin/into.clj}
         - {src: src/kill-emacs.sh, dest: ~/bin/kill-emacs}
         - {src: src/killj.sh, dest: ~/bin/killj}
+        - {src: src/killp.sh, dest: ~/bin/killp}
         - {src: src/mdns, dest: ~/bin/mdns}
         - {src: src/mkram.clj, dest: ~/bin/mkram}
         - {src: src/mount-nfs.sh, dest: ~/bin/mount-nfs}
@@ -36,10 +37,12 @@
         - {src: src/my-mongodb, dest: ~/bin/my-mongodb}
         - {src: src/my-postgres, dest: ~/bin/my-postgres}
         - {src: src/my-redis, dest: ~/bin/my-redis}
+        - {src: src/node-serv.js, dest: ~/bin/node-serv.js}
         - {src: src/outdated.clj, dest: ~/bin/outdated}
         - {src: src/p, dest: ~/bin/p}
         - {src: src/pidof.sh, dest: ~/bin/pidof}
         - {src: src/pk.hkim.jp, dest: ~/bin/pk.hkim.jp}
+        - {src: src/projects.sh, dest: ~/projects/projects.sh}
         - {src: src/psj.sh, dest: ~/bin/psj}
         - {src: src/refresh-m2.sh, dest: ~/bin/refresh-m2}
         - {src: src/rm-local-snapshots.sh, dest: ~/bin/rm-local-snapshots}
@@ -57,7 +60,5 @@
         - {src: src/wol.clj, dest: ~/bin/wol}
     - name: check suffixes
       ansible.builtin.debug:
-        msg: Some scripts installed under ~/bin have suffixes
-             such as `.clj` and `.sh`.
-             Consider remove the suffixes or symlink before use.
+        msg: currently no messages.
 ...
